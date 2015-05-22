@@ -1,3 +1,39 @@
+# lets-website
+The code for my website from my dissertation project.
+
+This website is an implementation of a Local Exchange Trading System. http://en.wikipedia.org/wiki/Local_exchange_trading_system
+
+It was written in PHP. 
+It features a basic hand coded mvc framework.
+It is a single view application that dynamically updates and injects the code into view.
+For this purpose it also uses Jquery and Ajax (with Json).
+
+Features of the system:
+
+  It allows users to create a profile, and features email authentication.
+  
+  The website has an authenticated login, and user-session support.
+  
+  It includes a profile creation, profile view and profile-edit view.
+  
+  There is a SQL-based search function.
+  
+  It allows users to create 'favours'.
+  
+  It allows users to respond to 'favours'.
+  
+  It has a SQL-based conversation function.
+  
+  It has a Transaction view, which displays different types of information about the previous transactions for that user or any other user.
+  
+  
+This code is posted purely for demonstrational purposes.
+I have no intention to work on it any further.
+If you want to know anything about the code, or the project, please get in touch.
+
+James A. Black
+
+
 --------------------------------------------------
 DIRECTORY STRUCTURE
 --------------------------------------------------
