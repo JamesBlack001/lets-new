@@ -1,0 +1,38 @@
+.bs-example{
+    	margin: 20px;
+    }
+    .blue {
+    color: #4791FF;
+    }
+    .red {
+    color: #FA1E38;
+    }
+    h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+    }
+    .item{
+        background: #333;    
+        text-align: center;
+        height: 300px !important;
+    }
+    .carousel{
+        margin-top: 20px;
+    }
+    .carousel-inner > .item > img {
+    padding: 20px;
+    width: 200px;
+    margin: 0 auto;
+    max-width: 100%;*/
+    height: auto;
+    width: auto\9; /* ie8 */
+    }
+    img#chosenImage{
+        border:1px solid;
+        border-color: #B7B5B5;
+        width: 80px;
+        /*height: 80px;*/
+    }

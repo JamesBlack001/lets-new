@@ -1,0 +1,2 @@
+Options -Indexes
+#this file stops users from accessing 'this immediate' directory structure they should not be allowed to

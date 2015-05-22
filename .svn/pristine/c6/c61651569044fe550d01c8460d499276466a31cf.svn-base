@@ -1,0 +1,84 @@
+<?php
+
+//require_once $_SERVER['DOCUMENT_ROOT']."/LETS/mvc/includes/SqlConnect.php";
+include_once $_SERVER['DOCUMENT_ROOT'].'/mvc/mvc/includes/viewComponents.php';
+require_once $_SERVER['DOCUMENT_ROOT']."/mvc/mvc/includes/SqlConnect.php";
+
+
+class Post{
+	public $pid;
+	public $username;
+	public $email;
+	public $title;
+	public $description;
+	public $state;
+	public $cost;
+	public $expiry;
+	public $favourClientID;
+	//... inclue more fields that is other post-information extracted from db
+	public $userCredits;
+	public $userID;
+
+	public function getPostDetails(){
+	//include a function to get the relevant post details based on the PID in the model
+	//call it from the controller
+	//the function will get the details, and store them into variables in this model
+	//the method returnView will use the variables stored in THIS model, and then pass those details into the
+	//method call viewPostDetails, to echo the details for the user.
+
+		//these set variables are just default, set jsut to test the method
+
+		$postResultSet = SqlConnect::getInstance()->validateConnection()->prepareStatement("SELECT client_id,title,post_description,state,credit_cost,expiry_date FROM post WHERE post_id = ?")->bindParamsCheckUser('s',$this->pid)->stmtExecute()->get_Result()->getRes();
+		$postArray = $postResultSet->fetch_array();
+
+		$userResultSet = SqlConnect::getInstance()->validateConnection()->prepareStatement("SELECT email,username FROM client WHERE client_id = ?")->bindParamsCheckUser('s',$postArray['client_id'])->stmtExecute()->get_Result()->getRes();
+		$userArray = $userResultSet->fetch_array();
+
+		$this->username = $userArray['username'];
+		$this->email = $userArray['email'];
+		$this->title = $postArray['title'];
+		$this->description = $postArray['post_description'];
+		$this->state = $postArray['state'];
+		$this->cost = $postArray['credit_cost'];
+		$this->expiry = $postArray['expiry_date'];
+		$this->favourClientID = $postArray['client_id'];
+	}
+	public function getUserCreditDetails(){
+		session_start();
+		$this->userID=$_SESSION['client_id'];
+		
+		$userCreditSet = SqlConnect::getInstance()->validateConnection()->prepareStatement("SELECT credit_amount FROM client WHERE client_id = ?")->bindParamsCheckUser('s',$this->userID)->stmtExecute()->get_Result()->getRes();
+		$userCreditArray = $userCreditSet->fetch_array();
+		$this->userCredits= $userCreditArray['credit_amount'];
+	}
+	public function insertTransactionRequest(){
+		//echo "hello";
+
+		//echo $this->pid." ".$this->favourClientID." ".$this->userID;
+		SqlConnect::getInstance()->validateConnection()->prepareStatement("INSERT INTO transaction_request (pid, favour_uid, client_uid, date_time) VALUES (?,?,?,CURRENT_TIMESTAMP() )")->bindParamsTransactionRequest('iii',$this->pid,$this->favourClientID,$this->userID)->stmtExecute();
+	}
+	public function returnView($data){
+		
+		if($data['action']==='postDetails'){
+			echo openingComponent();
+			echo navBar();
+			echo viewPostDetails(['client_id'=>$this->favourClientID,'cost'=>$this->cost, 'expiry'=>$this->expiry, 'postTitle'=>$this->title,'postDescription'=>$this->description,'postID'=>$this->pid, 'username'=>$this->username,'email'=>$this->email,'state'=>$this->state]);
+			echo closingComponent();
+		}
+		else if($data['action']==='transactionSummary'){
+			echo openingComponent();
+			echo navBar();
+			echo viewTransactionSummary(['favour_client_id'=>$this->favourClientID,'cost'=>$this->cost, 'expiry'=>$this->expiry, 'postTitle'=>$this->title,'postDescription'=>$this->description,'postID'=>$this->pid, 'username'=>$this->username,'email'=>$this->email,'user_ID'=>$this->userID,'user_credits'=>$this->userCredits]);
+			echo closingComponent();		
+		}
+		else{
+			echo 
+				'
+					<p>Something went wrong</p>
+					<p>Probably didn"t add the view Component method calls to the Main.php file for this particular view</p>
+				';
+		}
+	}
+}
+
+?>

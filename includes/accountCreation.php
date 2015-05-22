@@ -1,0 +1,34 @@
+<?php
+
+	require_once "./SqlConnect.php";
+
+
+//script for verifuying user account
+
+$email=$_GET['email'];
+$hash=$_GET['hash'];
+//get teh details from URL, then load new view/Model
+echo "email: ".$email;
+
+echo "hash: ".$hash;
+
+$resultSet = SqlConnect::getInstance()->validateConnection()->prepareStatement("SELECT email,hash,active,client_id FROM client where email = ? AND hash = ? AND active = ?")->bindParamsGetClientHash('sss',$email, $hash, 0)->stmtExecute()->get_Result()->getRes();
+$match  = mysqli_num_rows($resultSet);
+$resultArray = $resultSet->fetch_assoc();
+if($match===1){
+	$resultHash=$resultArray['hash'];
+	$resultEmail=$resultArray['email'];
+	$resultActive = $resultArray['active'];
+	$resultID = $resultArray['client_id'];
+	if($resultHash===$hash && $resultEmail===$email && $resultActive==0){
+		echo "hash+email+active ok";
+		//perform action on db to change active = 1
+		SqlConnect::getInstance()->validateConnection()->prepareStatement("UPDATE client set active = ? where client_id = ?")->bindParamsUpdateActive('ii',1,$resultID)->stmtExecute();
+
+		//return user to login page
+		header( 'Location: http://46.101.34.183/mvc/mvc/public/home/loadForm/'.$email );
+	}
+}
+echo "OK";
+
+?>

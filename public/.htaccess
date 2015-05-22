@@ -1,0 +1,13 @@
+#Implementation Note: framework for mvc adapted tutorial at 
+#http://www.phpacademy.org, Alex Garret
+	
+
+Options -MultiViews
+RewriteEngine On
+
+RewriteBase /mvc/mvc/public/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+ReWriteRule ^(.+)$ index.php?url=$1 [QSA,L]

@@ -1,0 +1,324 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Get",
+				"GetPostsView"
+			],
+			[
+				"get",
+				"getPostsView"
+			],
+			[
+				"image",
+				"image_id"
+			],
+			[
+				"ret",
+				"retrieved_name"
+			],
+			[
+				"return",
+				"returnValue"
+			],
+			[
+				"client",
+				"client_id"
+			],
+			[
+				"topics",
+				"topics_array"
+			],
+			[
+				"_",
+				"_SESSION"
+			],
+			[
+				"mysql",
+				"mysql_close"
+			],
+			[
+				"cou",
+				"course1"
+			],
+			[
+				"courses",
+				"courses_array"
+			],
+			[
+				"n",
+				"nl2br"
+			],
+			[
+				"my",
+				"mysql_query"
+			],
+			[
+				"print",
+				"print_r"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/James/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/xampp/htdocs/LETS/controllers/GetPostsController.php",
+		"/C/xampp/htdocs/LETS/views/GetPostsView.php",
+		"/C/xampp/htdocs/LETS/index.php",
+		"/C/xampp/htdocs/LETS/includes/GetPostsModel.php",
+		"/C/xampp/htdocs/LETS/includes/SqlConnect.php",
+		"/C/xampp/htdocs/LETS/includes/sqlConnect.php",
+		"/C/xampp/htdocs/LETS/returnHome.php",
+		"/C/xampp/htdocs/LETS/includes/formprocess.php",
+		"/C/xampp/htdocs/LETS/makePost.php",
+		"/C/xampp/htdocs/testBed/SimpleClass.php",
+		"/C/xampp/htdocs/underconstruction.html",
+		"/C/xampp/htdocs/includes/formprocess.php",
+		"/C/xampp/htdocs/index.php",
+		"/C/xampp/htdocs/includes/registerprocess.php",
+		"/C/xampp/htdocs/includes/registerPost.php",
+		"/C/xampp/htdocs/includes/sqlconnect.php",
+		"/C/xampp/htdocs/includes/logout.php",
+		"/C/xampp/htdocs/includes/getMostRecentPosts.php",
+		"/C/xampp/htdocs/returnHome.php",
+		"/C/xampp/htdocs/registerPost.php",
+		"/C/xampp/htdocs/makeprofile.php",
+		"/C/xampp/htdocs/makePost.php",
+		"/C/xampp/htdocs/registerprocess.php",
+		"/C/xampp/htdocs/uploads.php",
+		"/C/xampp/htdocs/logout.php",
+		"/C/xampp/htdocs/imageShow.php",
+		"/C/xampp/htdocs/getMostRecentPosts.php",
+		"/C/xampp/htdocs/getImage.php",
+		"/C/xampp/htdocs/formprocess.php",
+		"/C/xampp/htdocs/fileUploadSample.php",
+		"/C/xampp/htdocs/xamppindex.php",
+		"/C/xampp/htdocs/getUser.php",
+		"/C/xampp/htdocs/test.php",
+		"/C/xampp/htdocs/changeText.php",
+		"/C/xampp/htdocs/bitnami.css",
+		"/C/xampp/htdocs/index.html",
+		"/C/xampp/apache/conf/httpd.conf",
+		"/C/xampp/htdocs/index2.html",
+		"/C/xampp/htdocs/printname.php",
+		"/C/xampp/htdocs/applications.html",
+		"/C/xampp/htdocs/functions.php",
+		"/C/xampp/htdocs/index3.php",
+		"/C/xampp/htdocs/index4.php",
+		"/C/xampp/htdocs/phpinfo.php",
+		"/C/xampp/htdocs/phptest.php",
+		"/C/xampp/htdocs/variables.php",
+		"/C/xampp/htdocs/report.php",
+		"/C/Users/James/workspaceWeb/JavaScriptFeatures/MySQL/inserts.sql",
+		"/C/Users/James/workspaceWeb/JavaScriptFeatures/TestingArea/java1.js",
+		"/C/Users/James/workspaceWeb/JavaScriptFeatures/TestingArea/topicsFormStructure.html",
+		"/C/Users/James/workspaceWeb/JavaScriptFeatures/TestingArea/index.html",
+		"/C/Users/James/workspaceWeb/JavaScriptFeatures/MySQL/statements.sql",
+		"/C/xampp/htdocs/sqlconnect.php",
+		"/C/Users/James/workspaceWeb/JavaScriptFeatures/index.html",
+		"/C/Users/James/Documents/Admin/wantlist.txt",
+		"/C/Users/James/Documents/Admin/sideprojects.txt",
+		"/C/Users/James/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/cygwin64/home/James/MySQL_scripts/inserts.sql",
+		"/C/cygwin64/home/James/MySQL_scripts/statements.sql",
+		"/C/Users/James/Documents/WebsiteTest/index.html",
+		"/C/Users/James/AppData/Local/Temp/Temp1_nano-2.2.6.zip/faq.html",
+		"/C/Program Files/Sublime Text 3/Packages/Default.sublime-package",
+		"/C/Users/James/Documents/Uni Work Year 3/Term1/Software Verification/understandingTheLab.txt",
+		"/C/Users/James/Documents/WebsiteTest/index2.html",
+		"/C/Users/James/Downloads/http%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/setup.ini",
+		"/C/WINDOWS/system32/http:/buy.norton.com/rd/directrenewal?ECOMMERCEACTION=RENEW&SSLT=4096&spefsku=21228659&SKUf=21228659&spskup=21279077&SKUp=21279077&TARGETPRODUCTLINE=2&serviceID=2&TARGETPRODUCTLINEGROUP=2&TARGETPSN=XJ2WXPR742Q2&psn=XJ2WXPR742Q2&PRODUCTTREE=CiQKSlgMWFcyN1JQUTI0CBIyMjEyMDk3Gjc3MTIIODIyOTU2EgEgeAkW40y6AAFG1BAA%2F%2F%2F%2F%2F%2F%2F%2FAf%2F%2FGgAYAgoOEk5FMTIIOTcyNzcwMgAoAAgIGAEQASAASAFAAA%3D%3D&pid=300&partnerID=32140&PUID=5566&oslang=iso:ENG&oslocale=iso",
+		"/C/Users/James/Documents/WebsiteTest/index.php",
+		"/C/Users/James/workspaceWeb/JavaScriptFeatures/Index.html",
+		"/C/Users/James/Desktop/WebsiteTest/main.css",
+		"/C/Users/James/Desktop/Uni Work Year 3/Dissertation/testpage.html",
+		"/C/Users/James/Desktop/WebsiteTest/index.html",
+		"/C/Users/James/Desktop/Uni Work Year 3/Dissertation/LETS1/index.html",
+		"/C/Users/James/Desktop/Uni Work Year 3/Dissertation/projSpec.txt",
+		"/C/Users/James/Desktop/Uni Work Year 3/Dissertation/LETS1/css/new.css",
+		"/C/Users/James/Desktop/Uni Work Year 3/Dissertation/jquery.js",
+		"/C/Users/James/Downloads/html5-boilerplate-4.3.0/css/main.css",
+		"/C/Users/James/Downloads/html5-boilerplate-4.3.0/js/vendor/modernizr-2.6.2.min.js",
+		"/C/Users/James/Desktop/Uni Work Year 3/Dissertation/LETS1/js/vendor/jquery-1.10.2.min.js",
+		"/C/Users/James/Downloads/html5-boilerplate-4.3.0/doc/html.md",
+		"/C/Users/James/Downloads/html5-boilerplate-4.3.0/doc/js.md",
+		"/C/Users/James/Downloads/html5-boilerplate-4.3.0/index.html",
+		"/C/Users/James/Downloads/html5-boilerplate-4.3.0/crossdomain.xml",
+		"/C/Users/James/Downloads/html5-boilerplate-4.3.0/css/normalize.css",
+		"/C/Users/James/Documents/haskell/test.hs"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"index3",
+			"index",
+			"href",
+			"action",
+			"act",
+			"href",
+			"action",
+			"href",
+			"action",
+			"require",
+			"require_once",
+			"include",
+			"display",
+			"<ul(.)*>(.)*</ul>",
+			"<li(.)*>(.)*</li>",
+			"<li.*>.*</li>",
+			"'",
+			"\\'",
+			"(echo nl2br)(*)(;)",
+			"$index++;",
+			"$index++",
+			"$index",
+			"\"",
+			"node.js",
+			"print",
+			"ready"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\"",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

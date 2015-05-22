@@ -1,0 +1,27 @@
+<?php
+
+//require_once $_SERVER['DOCUMENT_ROOT']."/LETS/mvc/includes/SqlConnect.php";
+//require_once $_SERVER['DOCUMENT_ROOT']."/NewMVC/mvc/includes/content.php";
+include_once $_SERVER['DOCUMENT_ROOT'].'/newmvc/mvc/includes/viewComponents.php';
+
+class Favour{
+
+	public function returnView($data){
+
+		if($data['action']=='makeFavour'){
+			echo openingComponent();
+			echo navBar();
+			echo makeFavour();
+			echo closingComponent();
+		}
+		else{
+			echo 
+				'
+					<p>Something went wrong</p>
+					<p>Probably didn"t add the view Component method calls to the Main.php file for this particular view</p>
+				';
+		}
+	}
+}
+
+?>

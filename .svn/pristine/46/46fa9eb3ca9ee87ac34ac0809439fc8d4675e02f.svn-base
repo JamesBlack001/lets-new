@@ -1,0 +1,91 @@
+<html>
+<head>
+<style>
+
+/*Code for spinner taken from - http://lea.verou.me/2013/11/cleanest-css-spinner-ever/ */
+
+@keyframes spin {
+	to { transform: rotate(1turn); }
+}
+
+.progress {
+	/*position: relative;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: inline-block;
+	width: 5em;
+	height: 5em;
+	margin: 0 .5em;
+	font-size: 12px;
+	text-indent: 999em;
+	overflow: hidden;
+	animation: spin 1s infinite steps(8);
+}
+
+.small.progress {
+	font-size: 6px;
+}
+
+.progress:before,
+.progress:after,
+.progress > div:before,
+.progress > div:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 2.25em; /* (container width - part width)/2  */
+	width: .5em;
+	height: 1.5em;
+	border-radius: .2em;
+	background: #eee;
+	box-shadow: 0 3.5em #eee; /* container height - part height */
+	transform-origin: 50% 2.5em; /* container height / 2 */
+}
+
+.progress:before {
+	background: #555;
+}
+
+.progress:after {
+	transform: rotate(-45deg);
+	background: #777;
+}
+
+.progress > div:before {
+	transform: rotate(-90deg);
+	background: #999;
+}
+
+.progress > div:after {
+	transform: rotate(-135deg);
+	background: #bbb;
+}
+</style>
+</head>
+<body>
+<div class="small progress"><div>Loading…</div></div>
+<?php
+
+	require_once $_SERVER['DOCUMENT_ROOT']."/mvc/mvc/includes/SqlConnect.php";
+
+	//get the favour_id
+	$favour_id=$_GET['fid'];
+
+	//echo $favour_id;
+
+	//update database
+
+	SqlConnect::getInstance()->validateConnection()->prepareStatement("UPDATE post SET state = (?) WHERE post_id = (?)")->bindParamsUpdateUsername('ss','retired',$favour_id)->stmtExecute();
+
+	//reload the viewUserDetails using session['client_id']
+	session_start();
+	//echo $_SESSION['client_id'];
+	$headerString = 'Location: http://46.101.34.183/mvc/mvc/public/home/activeFavours/'.$_SESSION['client_id'];
+	//echo $headerString;
+	header($headerString);
+
+?>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<?php
+
+//require_once $_SERVER['DOCUMENT_ROOT']."/LETS/mvc/includes/SqlConnect.php";
+//require_once $_SERVER['DOCUMENT_ROOT']."/NewMVC/mvc/includes/content.php";
+include_once $_SERVER['DOCUMENT_ROOT'].'/mvc/mvc/includes/viewComponents.php';
+require_once $_SERVER['DOCUMENT_ROOT']."/mvc/mvc/includes/SqlConnect.php";
+
+class Main{
+
+	public $loginValue;
+	public $formType;
+	public $detailValue;
+	public $user;
+	public $address;
+
+
+	public function returnView($data){
+
+		if($data['action']=='returnForm'){
+			
+			//get active value
+			//if 0, prompt them to validate their email
+			//if 1, prompt them to enter password entered in email
+			//if 2, allow to proceed as normal
+			if($this->address){
+				$resultSet = SqlConnect::getInstance()->validateConnection()->prepareStatement("SELECT client_id,active FROM client WHERE email =  ?")->bindParamsEmail('s',$this->address)->stmtExecute()->get_Result()->getRes();
+				$resultArray = $resultSet->fetch_assoc();
+				//echo $resultArray['client_id'];
+				$resultActive = $resultArray['active'];
+			}
+			else{
+				$resultActive = 2;
+			}
+			
+			echo openingComponent();
+			echo navBar();
+
+			echo loginForm($this->address);
+
+			if($resultActive==0){
+				$message="Please verify email address before visiting this page";
+			}
+			else if($resultActive==1){
+				$message="Use password sent in email to login.";
+			}
+			else{
+				$message="Login to access site";
+			}
+			echo userMessage($message);
+
+			echo dynamicUserInfo();
+			
+			echo closingComponent();
+		}
+		else if($data['action']=='createUserForm'){
+			echo openingComponent();
+			echo navBar();
+			echo createUserForm();
+			echo dynamicUserInfo();
+			echo closingComponent();
+		}
+		else if($data['action']=='initialHome'){
+			echo openingComponent();
+			echo navBar();
+			echo welcomeDiv();
+			echo closingComponent();
+		}
+		else if($data['action']=='editProfileForm'){
+
+			//get skill list()
+
+			session_start();
+			$clientID=$_SESSION['client_id'];
+
+			$resultSet = SqlConnect::getInstance()->validateConnection()->prepareStatement("SELECT skill,skill_type,skill_level,skill_id FROM skills WHERE client_id = ?")->bindParamsCheckUser('s',$clientID)->stmtExecute()->get_Result()->getRes();
+			$resultArray = $resultSet->fetch_all();
+
+			$count = count($resultArray);
+			
+
+			$_SESSION['skill_count']=$count;
+			//echo $_SESSION['skill_count'];
+			$skill_ids = array();
+			$_SESSION['skill_ids']= $skill_ids;
+			//print_r($_SESSION['skill_ids']);
+
+			for ($i=0; $i < $count; $i++) { 
+				array_push($skill_ids, $resultArray[$i][3]);
+			}
+			//print_r($skill_ids);
+			//for()
+			$_SESSION['skill_ids']=$skill_ids;
+
+			//print_r($_SESSION['skill_ids']);
+
+			//var_dump($resultArray);
+			//var_dump($resultArray); array is an array of array length [number of skills][1]
+			//[x][y] x = tot numb of skil, y = the skill
+
+			echo openingComponent();
+			echo navBar();
+			echo currentDetails();
+			echo editProfile($resultArray);
+			echo dynamicUserInfo();
+			echo closingComponent();
+		}
+		else{
+			echo 
+				'
+					<p>Something went wrong</p>
+					<p>Probably didn"t add the view Component method calls to the Main.php file for this particular view</p>
+				';
+		}
+	}
+}
+
+?>

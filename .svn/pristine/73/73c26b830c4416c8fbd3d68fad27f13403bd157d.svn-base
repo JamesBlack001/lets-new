@@ -1,0 +1,11 @@
+<?php
+
+	/*
+	Implementation Note: framework for mvc adapted tutorial at 
+	http://www.phpacademy.org, Alex Garret
+	*/
+	require_once $_SERVER['DOCUMENT_ROOT'].'/newmvc/mvc/app/core/App.php';
+	require_once $_SERVER['DOCUMENT_ROOT'].'/newmvc/mvc/app/core/Controller.php';
+	
+
+?>
